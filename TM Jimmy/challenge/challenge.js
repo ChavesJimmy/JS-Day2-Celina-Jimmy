@@ -32,18 +32,36 @@ function ATM(amount,a,b,c,d){
         alert("refill the 20 notes")
     }
     if(Amount10 < 51) {
-        alert("refill the 100 notes")
+        alert("refill the 10 notes")
     }
 
+    //Total amount available in this ATM
 
-    
+    let totalAvailable = (100*a + 50*b + 20*c + 10*d);
+
+    if (totalAvailable < amount) {
+        return("operation not possible")
+    }
+    else{ 
+        console.log ("operation going on")
+        }
+
+
+    //amount should not have any remain at the end of the process
     if (remain4>0)  {
     return("operation not possible")
 }
     else{ 
     console.log ("operation going on")
     }
+    
+    //if an amount of a bill is empty
+    if (a=0) {
+        remain1 = amount;
+        bill100 = 0;
+
+    }
 
      return ` You will get ${bill100} 100 notes, ${bill50} 50 notes, ${bill20} 20 notes and ${bill10} 10notes`
 }
-console.log(ATM(580,25,2,30,80))
+console.log(ATM(580,15,32,31,85))
