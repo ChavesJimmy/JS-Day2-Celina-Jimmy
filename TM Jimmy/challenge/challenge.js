@@ -2,36 +2,36 @@
 
 function ATM(amount,a,b,c,d){
 
-    let AmountBill100 = a;
-    let AmountBill50 = b;
-    let AmountBill20 = c;
-    let AmountBill10 = d;
+    let AmountNote100 = a;
+    let AmountNote50 = b;
+    let AmountNote20 = c;
+    let AmountNote10 = d;
 
 
-    let bill100 = Math.floor(amount/100);
+    let note100 = Math.floor(amount/100);
     let remain1 = amount % 100;
 
-    let bill50 = Math.floor(remain1/50);
+    let note50 = Math.floor(remain1/50);
     let remain2 = remain1 % 50;
 
-    let bill20 = Math.floor(remain2/20);
+    let note20 = Math.floor(remain2/20);
     let remain3 = remain2 % 20;
 
-    let bill10 = Math.floor(remain3/10);
+    let note10 = Math.floor(remain3/10);
     let remain4 = remain3 % 10;
 
     
     //alert amount of notes to low
-    if(AmountBill100 < 6) {
+    if(AmountNote100 < 6) {
         alert("refill the 100 notes")
     }
-    if(AmountBill50 < 11) {
+    if(AmountNote50 < 11) {
         alert("refill the 50 notes")
     }
-    if(AmountBill20 < 21) {
+    if(AmountNote20 < 21) {
         alert("refill the 20 notes")
     }
-    if(AmountBill10 < 51) {
+    if(AmountNote10 < 51) {
         alert("refill the 10 notes")
     }
 
@@ -58,10 +58,10 @@ function ATM(amount,a,b,c,d){
     //if an amount of a bill is empty
     if (a=0) {
         remain1 = amount;
-        bill100 = 0;
+        note100 = 0;
 
     }
 
-     return ` You will get ${bill100} 100 notes, ${bill50} 50 notes, ${bill20} 20 notes and ${bill10} 10notes`
+     return ` You will get ${note100} 100 notes, ${note50} 50 notes, ${note20} 20 notes and ${note10} 10notes`
 }
 console.log(ATM(580,15,32,31,85))
