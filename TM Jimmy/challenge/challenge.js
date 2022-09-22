@@ -2,10 +2,10 @@
 
 function ATM(amount,a,b,c,d){
 
-    let Amount100 = a;
-    let Amount50 = b;
-    let Amount20 = c;
-    let Amount10 = d;
+    let AmountBill100 = a;
+    let AmountBill50 = b;
+    let AmountBill20 = c;
+    let AmountBill10 = d;
 
 
     let bill100 = Math.floor(amount/100);
@@ -22,16 +22,16 @@ function ATM(amount,a,b,c,d){
 
     
     //alert amount of notes to low
-    if(Amount100 < 6) {
+    if(AmountBill100 < 6) {
         alert("refill the 100 notes")
     }
-    if(Amount50 < 11) {
+    if(AmountBill50 < 11) {
         alert("refill the 50 notes")
     }
-    if(Amount20 < 21) {
+    if(AmountBill20 < 21) {
         alert("refill the 20 notes")
     }
-    if(Amount10 < 51) {
+    if(AmountBill10 < 51) {
         alert("refill the 10 notes")
     }
 
