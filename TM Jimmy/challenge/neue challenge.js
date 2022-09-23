@@ -40,23 +40,25 @@ function ATM(/*amount,a,b,c,d*/){
   
       //Total amount available in this ATM
   
-  /*     let totalAvailable = (100*a + 50*b + 20*c + 10*d);
+      let maxAvailable = 1500;
   
-      if (totalAvailable < amount) {
-          return("operation not possible")
-      }
+      if (maxAvailable < amount) {
+        document.getElementById("check2").innerHTML = "Checking Amount.....Amount max is limited to 1500$";
+        return;}
       else{ 
-          console.log ("operation going on")
-          } */
+        document.getElementById("check2").innerHTML = "Checking Amount.....operation going on"
+          }
   
   
       //amount should not have any remain at the end of the process
-      /* if (remain4>0)  {
-      return("operation not possible")
-  }
-      else{ 
-      console.log ("operation going on")
-      } */
+      if (remain4>0)  {
+        document.getElementById("check").innerHTML = "Checking.......operation not possible";
+        return;}
+      else { 
+        document.getElementById("check").innerHTML = "Checking.......operation succeeded"
+      }
+     
+      
       
       //if an amount of a bill is empty
       // if (a=0) {
