@@ -2,13 +2,15 @@
 
 function ATM(/*amount,a,b,c,d*/){
 
-    /*   let AmountNote100 = a;
-      let AmountNote50 = b;
+      //let AmountNote100 = a;
+/*       a = 0;
+ */    /*   let AmountNote50 = b;
       let AmountNote20 = c;
       let AmountNote10 = d; */
-  
+
   
       let amount = document.getElementById("Amount").value;
+      let reserve = 3000;
   
   
       let note100 = Math.floor(amount/100);
@@ -22,25 +24,25 @@ function ATM(/*amount,a,b,c,d*/){
   
       let note10 = Math.floor(remain3/10);
       let remain4 = remain3 % 10;
-  
-      
-      //alert amount of notes to low
-  /*     if(AmountNote100 < 6) {
-          alert("refill the 100 notes")
+
+/*       
+      if (a=0){
+        return amount = 0;
       }
-      if(AmountNote50 < 11) {
-          alert("refill the 50 notes")
+      if (b=0){
+        return (remain1 = 0, remain2 = amount % 100 );
       }
-      if(AmountNote20 < 21) {
-          alert("refill the 20 notes")
+      if (c=0){
+        return (remain2 = 0, remain3 = remain1 % 100 );
       }
-      if(AmountNote10 < 51) {
-          alert("refill the 10 notes")
-      } */
+      if (d=0){
+        return (remain3 = 0, remain4 = remain2 % 100 );
+      };
+       */
   
       //Total amount available in this ATM
   
-      let maxAvailable = 1500;
+      let maxAvailable = 4500;
   
       if (maxAvailable < amount) {
         document.getElementById("check2").innerHTML = "Checking Amount.....Amount max is limited to 1500$";
@@ -57,7 +59,23 @@ function ATM(/*amount,a,b,c,d*/){
       else { 
         document.getElementById("check").innerHTML = "Checking.......operation succeeded"
       }
-     
+      
+      // checking balance
+      if (reserve<amount)  {
+        document.getElementById("check").innerHTML = "Checking.......your account balance doesn't allow you this operation";
+        return;}
+      else { 
+        document.getElementById("check").innerHTML = "Checking.......operation succeeded"
+      }
+      // balance statement
+
+
+          const bodyElement = document.getElementById("parent")
+          const balance = document.createElement("p");
+          balance.innerHTML=`Balance before transaction was ${reserve}.<br>
+          Your new balance is ${reserve-amount}`;
+          bodyElement.appendChild(balance);
+        
       
       
       //if an amount of a bill is empty
